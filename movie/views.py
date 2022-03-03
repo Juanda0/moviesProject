@@ -3,4 +3,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    return render(request,'home.html',{'name':'Juanda'})
+    searchTerm = request.GET.get('searchMovie')
+    return render(request,'home.html',{'searchTerm':searchTerm})
+
+def about(request):
+    return HttpResponse('<h1>welcome to About Page</h1>')
